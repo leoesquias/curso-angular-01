@@ -1,21 +1,27 @@
-import { Component } from '@angular/core';
-
+import { Component } from '@angular/core'
+import { AppComponent } from 'src/app/app.component';
 @Component({
     selector: 'app-contador',
-    template: `
-    <h1>{{titulo}}</h1>
-    <h3>La base es:<strong>{{base}}</strong></h3>
-    <button (click)=acumular(base)> +{{base}}</button>
-    <span>{{numero}}</span>
-    <button (click)=acumular(-base)> -{{base}}</button>
-     `
+     templateUrl:'./contador.component.html',
+
     })
 
 export class ContadorComponent{
     public titulo: string = 'Contador App';
-    public numero:number =10;
-    public base:number =5
+    public numero:number =8;
+    public base:number =1
+
+
     public acumular(valor:number){
        this.numero+= valor;
     }
+
+    public reset(){
+      this.numero= 0;
+   }
 }
+
+
+
+
+

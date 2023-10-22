@@ -11,9 +11,27 @@
 
     <td>Capitalizado:</td>
     <dd>{{nombreCapitalizado}}</dd>
-    
+  </dl>
 
-    <button (click)=cambiarNombre()>Cambiar Heroe</button>
-    <button (click)="cambiarEdad()">Cambiar Edad</button>
+    <button
+      *ngIf="nombre !=='Spiderman'"
+      (click)=cambiarNombre()
+      class="btn btn-primary nx-2">
+      Cambiar Heroe
+     </button>
 
-</dl>
+
+    <button
+      *ngIf="edad !==23"
+      (click)="cambiarEdad()"
+      class="btn btn-primary nx-2">
+      Cambiar Edad
+    </button>
+
+    <button
+       (click)="resetForm()"
+      class="btn btn-primary nx-2">
+      Resetear
+    </button>
+
+

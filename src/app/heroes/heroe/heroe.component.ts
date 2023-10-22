@@ -17,12 +17,19 @@ export class HeroeComponent{
 
         return `${this.nombre} - ${this.edad}`;
     }
+
+
+
     cambiarNombre():void{
-        this.nombre='Spiderman'; 
+        this.nombre='Spiderman';
     }
 
     cambiarEdad():void{
-        this.edad=23; 
+        this.edad=23;
     }
 
-}
+    resetForm():void{
+      this.nombre="iroman";
+      this.edad=56
+    }
+  }
