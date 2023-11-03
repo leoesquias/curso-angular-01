@@ -1,0 +1,12 @@
+<h1>Dragon Ball Z des Pages</h1>
+<hr>
+<div class="row">
+   <div class="col">
+       <!-- <app-personajes ></app-personajes> -->
+      <dbz-list [characterList]="characters"></dbz-list>
+   </div>
+
+    <div class="col">
+        <dbz-add-character (ue_onNewCharacter)="uf_onNewCharacter($event)"></dbz-add-character>
+
+</div>
