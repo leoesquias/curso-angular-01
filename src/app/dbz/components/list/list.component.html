@@ -5,22 +5,25 @@
 </ul>-->
 <ul class="list-group">
   <li *ngFor="
-  let character of characterList;
-  let i = index;
-  let isFirst = first;
-  let isLast = last;
-  let isEven = even;
-  let isOdd = odd;
-  "
-  class="list-group-item"
-  [ngClass]="{
-    ' list-group-item-dark':isEven,
-    'list-group-item-primary':isOdd
-  }">
-  <span class="text-primary">{{ i + 1}}</span>
-  <span>{{character.nombre}}-</span>
-   <strong>Power:</strong>
-   <span>{{character.poder}}</span>
+    let character of characterList;
+    let i = index;
+    let isFirst = first;
+    let isLast = last;
+    let isEven = even;
+    let isOdd = odd;
+    "
+    class="list-group-item d-flex justify-content-between align-items-center"
+    [ngClass]="{
+      ' list-group-item-dark':isEven,
+      'list-group-item-primary':isOdd
+    }">
+    <div>
+      <span class="text-primary">{{ i + 1}}</span>
+      <span>{{character.nombre}}-</span>
+      <strong>Power:</strong>
+      <span>{{character.poder}}</span>
+    </div>
+    <button  (click)="uf_onDeleteCharacter(i)" class ="btn btn-danger">X</button>
 </li>
 </ul>
 

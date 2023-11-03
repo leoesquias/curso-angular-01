@@ -2,8 +2,9 @@
 <hr>
 <div class="row">
    <div class="col">
-       <!-- <app-personajes ></app-personajes> -->
-      <dbz-list [characterList]="characters"></dbz-list>
+       <!--ue_onDelete -->
+      <dbz-list [characterList]="characters"
+      (ue_onDelete)="uf_onDeleteCharacter($event)"></dbz-list>
    </div>
 
     <div class="col">

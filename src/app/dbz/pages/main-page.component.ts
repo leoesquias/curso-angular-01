@@ -14,15 +14,19 @@ import { ICharacter } from '../interfaces/character.interface';
 
 export class MainPageComponent {
 
-  public characters: IPersonaje[]=[
+  public characters: ICharacter[]=[
     {nombre: ' MPC-Krillin*', poder: 1000, procedencia: 'Bolivia'  },
     { nombre: 'MPC-Goku',    poder: 9500, procedencia: 'Chile'   },
     { nombre: 'MPC-Vegeta',    poder: 7500, procedencia: 'Peru' }
   ];
 
   uf_onNewCharacter(character:ICharacter):void{
-    console.log('MainPage')
-    console.log(character)
+    //console.log('MainPage')
+    //console.log(character)
+    this.characters.push(character);
   }
 
+  uf_onDeleteCharacter(index:number):void{
+    this.characters.splice(index,1);
+  }
 }
