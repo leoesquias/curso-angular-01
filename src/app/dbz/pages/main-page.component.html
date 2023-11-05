@@ -3,11 +3,15 @@
 <div class="row">
    <div class="col">
        <!--ue_onDelete -->
-      <dbz-list [characterList]="characters"
-      (ue_onDelete)="uf_onDeleteCharacter($event)"></dbz-list>
+      <dbz-list
+        [characterList]="characters"
+        (ue_onDelete)="uf_onDeleteCharacter($event)">
+    </dbz-list>
    </div>
 
     <div class="col">
-        <dbz-add-character (ue_onNewCharacter)="uf_onNewCharacter($event)"></dbz-add-character>
+        <dbz-add-character
+          (ue_onNewCharacter)="uf_onNewCharacter($event)">
+        </dbz-add-character>
 
 </div>

@@ -15,10 +15,17 @@ export class ListComponent {
       ];
 
       @Output()
-      public ue_onDelete: EventEmitter <number>= new EventEmitter();
+      public ue_onDelete: EventEmitter <string>= new EventEmitter();
      // uf_onDeleteCharacter = Index value : number
-      uf_onDeleteCharacter(index:number ): void{
+     /* uf_onDeleteCharacter(index:number ): void{
         //TODO Emitir el Id del personaje
         this.ue_onDelete.emit(index);
+      }*/
+      uf_onDeleteCharacter(id?:string ): void{
+        //TODO Emitir el Id del personaje
+        if (!id) return
+        console.log({id})
+        this.ue_onDelete.emit(id);
+
       }
 }

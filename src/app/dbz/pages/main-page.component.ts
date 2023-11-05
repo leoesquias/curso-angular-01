@@ -13,8 +13,21 @@ import { ICharacter } from '../interfaces/character.interface';
 })
 
 export class MainPageComponent {
+  /*Inyeccion de dependencia ID*/
+  constructor( private dbzService:DbzService) {}
 
-  public characters: ICharacter[]=[
+    get characters():ICharacter[]{
+      return [...this.dbzService.characters];
+    }
+    uf_onDeleteCharacter(id:string):void{
+      this.dbzService.uf_deleteCharacterById(id);
+    }
+    uf_onNewCharacter(character:ICharacter):void{
+      this.dbzService.uf_addCharacter(character);
+    }
+  }
+
+  /*public characters: ICharacter[]=[
     {nombre: ' MPC-Krillin*', poder: 1000, procedencia: 'Bolivia'  },
     { nombre: 'MPC-Goku',    poder: 9500, procedencia: 'Chile'   },
     { nombre: 'MPC-Vegeta',    poder: 7500, procedencia: 'Peru' }
@@ -28,5 +41,4 @@ export class MainPageComponent {
 
   uf_onDeleteCharacter(index:number):void{
     this.characters.splice(index,1);
-  }
-}
+  }*/
